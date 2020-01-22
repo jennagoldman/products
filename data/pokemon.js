@@ -80,7 +80,7 @@ const flareon = {
     price: 200,
 };
 
-const pokemon = [
+const pokemons = [
     bulbasaur,
     charmander,
     squirtle,
@@ -92,5 +92,5 @@ const pokemon = [
     flareon
 ];
 
-export default pokemon;
+export default pokemons;
 
