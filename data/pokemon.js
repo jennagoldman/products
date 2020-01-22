@@ -1,5 +1,5 @@
 const bulbasaur = {
-    id: '001',
+    id: 'bulbasaur',
     name: 'Bulbasaur',
     image: 'assets/bulbasaur.png',
     description: 'Grass-type, seed Pokemon',
@@ -8,7 +8,7 @@ const bulbasaur = {
 };
 
 const charmander = {
-    id: '004',
+    id: 'charmander',
     name: 'Charmander',
     image: 'assets/charmander.png',
     description: 'Fire-type, lizard Pokemon',
@@ -17,7 +17,7 @@ const charmander = {
 };
 
 const squirtle = {
-    id: '007',
+    id: 'squirtle',
     name: 'Squirtle',
     image: 'assets/squirtle.png',
     description: 'Water-type, tiny turtle Pokemon',
@@ -27,57 +27,57 @@ const squirtle = {
 
 
 const pikachu = {
-    id: '025',
+    id: 'pikachu',
     name: 'Pikachu',
     image: 'assets/pikachu.png',
     description: 'Electric-type, mouse Pokemon',
     category: 'electric',
-    price: 10,
+    price: 50,
 };
 
 const jigglypuff = {
-    id: '039',
+    id: 'jigglypuff',
     name: 'Jigglypuff',
     image: 'assets/jigglypuff.png',
     description: 'Fairy-type, balloon Pokemon',
     category: 'fairy',
-    price: 10,
+    price: 75,
 };
 
 const eevee = {
-    id: '133',
+    id: 'eevee',
     name: 'Eevee',
     image: 'assets/eevee.png',
     description: 'Normal-type, evolution Pokemon',
     category: 'normal',
-    price: 10,
+    price: 100,
 };
 
 const vaporeon = {
-    id: '134',
+    id: 'vaporeon',
     name: 'Vaporeon',
     image: 'assets/vaporeon.png',
     description: 'Water-type, bubble jet Pokemon',
-    category: 'normal',
-    price: 10,
+    category: 'water',
+    price: 200,
 };
 
 const jolteon = {
-    id: '135',
+    id: 'jolteon',
     name: 'Jolteon',
     image: 'assets/jolteon.png',
     description: 'Electric-type, lightning Pokemon',
-    category: 'normal',
-    price: 10,
+    category: 'electric',
+    price: 200,
 };
 
 const flareon = {
-    id: '136',
+    id: 'flareon',
     name: 'Flareon',
     image: 'assets/flareon.png',
     description: 'Fire-type, flame Pokemon',
-    category: 'normal',
-    price: 10,
+    category: 'fire',
+    price: 200,
 };
 
 const pokemon = [

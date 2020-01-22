@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/favicon.ico" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href="../common/style.css">
     <link rel="stylesheet" href="products.css">
     <title>Products</title>
@@ -11,9 +12,19 @@
 <body>
     <header><h1>Catch 'Em All</h1></header>
 
-    <main>This is the Products main content</main>
+    <main>
+        <ul id="pokemon-list">
+            <li class="electric" title="Electric-type, lightning Pokemon">
+                <h3>Jolteon</h3>
+                <img src="../assets/jolteon.png" alt="Jolteon image">
+                <p>$200</p>
+                <button value="jolteon">Add</button>
+            </li>
+        </ul>
+    </main>
 
     <footer>Made by Jenna Goldman</footer>
     
+    <script type="module" src="app.js"></script>
 </body>
 </html>
