@@ -1,5 +1,6 @@
 function createPokemons(pokemon) {
     const li = document.createElement('li');
+
     li.className = pokemon.category;
     li.title = pokemon.description;
 
@@ -7,7 +8,7 @@ function createPokemons(pokemon) {
     h3.textContent = pokemon.name;
 
     const img = document.createElement('img');
-    img.src = `../assets.${pokemon.id}.png`;
+    img.src = `../assets/${pokemon.id}.png`;
 
     const paragraph = document.createElement('p');
     const priceWithDecimal = pokemon.price.toFixed(2);
@@ -15,7 +16,7 @@ function createPokemons(pokemon) {
 
     const button = document.createElement('button');
     button.value = pokemon.id;
-    button.textCotent = 'Add';
+    button.textContent = 'Add';
 
     li.appendChild(h3);
     li.appendChild(img);
