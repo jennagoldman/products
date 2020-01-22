@@ -1,6 +1,5 @@
-#container {
-    width: 80%;
-    margin: 0 auto;
+ul {
+    padding: 0;
 }
 
 li {
@@ -41,4 +40,12 @@ button:hover {
 
 footer {
     margin-top: 20px;
+}
+
+@media (max-width: 1023px) {
+
+    #container {
+        width: 90%;
+        margin: 0 auto;
+    }
 }
