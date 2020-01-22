@@ -3,34 +3,36 @@
 }
 
 body {
+    color: #333;
     background: #2F2FA2;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
 }
 
 header {
-    padding: 20px;
-    font-family: 'Bangers', sans-serif;
-    font-size: 30px;
     text-align: center;
     text-transform: uppercase;
+    padding: 20px;
 }
 
 h1 {
     color: #F64C71;
+    font-family: 'Bangers', sans-serif;
+    font-size: 48px;
+    text-shadow: 2px 2px #FFF;
     letter-spacing: 1px;
     margin: 10px;
-    text-shadow: 2px 2px #FFF;
 }
 
-a {
+header a {
     color: #FFF;
     text-decoration: none;
+    font-weight: 700;
 }
 
 a:hover {
     color: #FFF;
-    border-bottom: 2px solid #FCCD04;
+    border-bottom: 2px solid #FCBA04;
 }
 
 main {
@@ -43,7 +45,7 @@ footer {
     background: #F64C71;
     font-family: 'Bangers', sans-serif;
     font-size: 20px;
-    letter-spacing: 2px;
     text-align: center;
+    letter-spacing: 2px;
     padding: 15px;
 }
