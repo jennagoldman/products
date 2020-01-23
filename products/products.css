@@ -2,7 +2,8 @@
     padding: 0;
 }
 
-li {
+main li {
+    color: #333;
     background: #FFF;
     border: none;
     border-radius: 15px;
@@ -21,7 +22,7 @@ li img {
     width: 150px;
 }
 
-button {
+.add-product-button {
     color: #FFF;
     background: #F64C71;
     font-family: 'Open Sans', sans-serif;
@@ -34,7 +35,7 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.add-product-button:hover {
     background: #FCBA04;
 }
 
