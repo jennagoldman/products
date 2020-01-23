@@ -1,10 +1,6 @@
 table {
-    width: 100%;
-}
-
-
-table {
     border-collapse: collapse;
+    width: 100%;
 }
 
 th, td {
@@ -19,31 +15,29 @@ th {
 td {
     color: #333;
     background: #FFF;
-    border: 1px solid #CCC;
-}
-
-#order-total {
-    font-weight: 700;
+    border: 1px solid #F64C71;
 }
 
 #order-total-label {
+    font-weight: 700;
     text-align: right;
     padding-right: 5%;
 }
 
-button {
+#order-total-amount {
+    font-weight: 700;
+}
+
+#place-order-button {
     color: #FFF;
     background: #F64C71;
+    font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
     border: none;
     border-radius: 5px;
     margin: 20px;
-    padding: 20px;
+    padding: 10px 20px;
     cursor: pointer;
-}
-
-button:hover {
-    background: #FCBA04;
 }

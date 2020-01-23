@@ -15,7 +15,9 @@ function renderLineItem(someLineItem, someProduct) {
     lineItemRow.appendChild(lineItemQuantity);
 
     const lineItemTotal = document.createElement('td');
-    lineItemTotal.textContent = calcLineItem(someLineItem.quantity, someProduct.price);
+    const LineItemTotalRaw = calcLineItem(someLineItem.quantity, someProduct.price);
+    const lineItemTotalWithCents = LineItemTotalRaw.toFixed(2);
+    lineItemTotal.textContent = `$${lineItemTotalWithCents}`;
     lineItemRow.appendChild(lineItemTotal);
 
     return lineItemRow;

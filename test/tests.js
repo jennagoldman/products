@@ -1,3 +1,3 @@
-import './create-pokemon.js';
-import './utils.js';
-import './render-line-item.js';
+import './create-pokemon.test.js';
+import './utils.test.js';
+import './render-line-item.test.js';

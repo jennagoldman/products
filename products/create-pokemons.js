@@ -17,6 +17,7 @@ function createPokemons(pokemon) {
     const button = document.createElement('button');
     button.value = pokemon.id;
     button.textContent = 'Add';
+    button.className = 'add-product-button';
 
     li.appendChild(h3);
     li.appendChild(img);

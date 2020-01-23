@@ -1,6 +1,6 @@
 const orderList = [{
     id: 'pikachu',
-    quantity: 1
+    quantity: 2
 }, {
     id: 'jigglypuff',
     quantity: 3

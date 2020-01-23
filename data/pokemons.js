@@ -80,6 +80,15 @@ const flareon = {
     price: 200,
 };
 
+const mewtwo = {
+    id: 'mewtwos',
+    name: 'Mewtwo',
+    image: 'assets/mewtew.png',
+    description: 'Psychic-type, genetic Pokemon',
+    category: 'psychic',
+    price: 500
+};
+
 const pokemons = [
     bulbasaur,
     charmander,
@@ -89,7 +98,8 @@ const pokemons = [
     eevee,
     vaporeon,
     jolteon,
-    flareon
+    flareon,
+    mewtwo
 ];
 
 export default pokemons;

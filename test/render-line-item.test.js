@@ -19,7 +19,7 @@ test('renderLineItem renders line item as table row', function(assert) {
         category: 'electric',
         price: 50,
     };
-    const expected = '<tr><td>Pikachu</td><td>2</td><td>100</td></tr>';
+    const expected = '<tr><td>Pikachu</td><td>2</td><td>$100.00</td></tr>';
 
     //Act 
     // Call the function you're testing and set the result to a const

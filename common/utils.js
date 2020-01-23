@@ -9,13 +9,29 @@ const findById = (someArray, someId) => {
     } return null;
 };
 
-const calcLineItem = (quantity, amount) => {
-    const lineItemTotal = quantity * amount;
+const calcLineItem = (quantity, price) => {
+    const lineItemTotal = quantity * price;
     return lineItemTotal;
+};
+
+const calcOrderTotal = (cartArray, productsArray) => {
+    let orderTotal = 0;
+
+    for (let i = 0; i < cartArray.length; i++) {
+        const lineItem = cartArray[i];
+        const product = findById(productsArray, lineItem.id);
+
+        orderTotal += calcLineItem(lineItem.quantity, product.price);
+    }
+
+    const orderTotalWithCents = orderTotal.toFixed(2);
+    const orderTotalWithDollarSign = `$${orderTotalWithCents}`;
+    return orderTotalWithDollarSign;
 };
 
 
 export {
     findById,
-    calcLineItem
+    calcLineItem,
+    calcOrderTotal
 };

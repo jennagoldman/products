@@ -4,7 +4,7 @@ import { createPokemons } from '../products/create-pokemons.js';
 
 const test = QUnit.test;
 
-test('pikachu data renders as formatted and styled list item', function(assert) {
+test('createPokemons renders Pikachu data as formatted and styled list item', function(assert) {
     //Arrange
     // Set up your parameters and expectations
     const pikachu = {

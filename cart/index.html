@@ -10,12 +10,12 @@
     <link href="/assets/favicon.ico" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href="../common/style.css">
     <link rel="stylesheet" href="cart.css">
-    <title>Catch 'Em All - Cart</title>
+    <title>Catch 'Em All! - Cart</title>
 </head>
 
 <body>
     <header>
-        <h1>Catch 'Em All</h1>
+        <h1>Catch 'Em All!</h1>
         <a href="../index.html">Home</a>
         <a href="../products/index.html">Shop</a>
         
@@ -24,38 +24,25 @@
     <main>
         <div id="container">
             <table>
-                <tr>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Total</th>
-                </tr>
-                <tr>
-                    <td>Pikachu</td>
-                    <td>1</td>
-                    <td>$75.00</td>
-                </tr>
-                <tr>
-                    <td>Jigglypuff</td>
-                    <td>3</td>
-                    <td>$225.00</td>
-                </tr>
-                <tr>
-                    <td>Jolteon</td>
-                    <td>2</td>
-                    <td>$400.00</td>
-                </tr>
-                <tr id="order-total">
-                    <td colspan="2" id="order-total-label">Order Total: </td>
-                    <td>$700.00</td>
-                </tr>
+                <thead id="table-head">
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                </tbody>
+                <tfoot id="table-foot">
+                </tfoot>
             </table>
-            <button>Place Order</button>
+            <button id="place-order-button">Place Order</button>
         </div>
     </main>
 
-    <footer>Made by Jenna Goldman</footer>
+    <footer class="fixed">Made by Jenna Goldman</footer>
 
-    <script type="module" src=""></script>
+    <script type="module" src="./shopping-cart.js"></script>
 </body>
 
 </html>
