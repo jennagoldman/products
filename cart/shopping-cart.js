@@ -48,6 +48,8 @@ tableFoot.appendChild(orderTotalRow);
 
 
 placeOrderButton.addEventListener('click', () => {
-console.log('HI');
+    alert(JSON.stringify(orderList, true, 2));
+    localStorage.removeItem('CART');
+    window.location = '../index.html';
 });
 
