@@ -1,3 +1,5 @@
+import { findById } from '../common/utils.js';
+
 function createPokemons(pokemon) {
     const li = document.createElement('li');
 
@@ -18,11 +20,32 @@ function createPokemons(pokemon) {
     button.value = pokemon.id;
     button.textContent = 'Add';
     button.className = 'add-product-button';
+    button.addEventListener('click', () => {
+        let initialCart = localStorage.getItem('CART');
+        let cart;
 
-    li.appendChild(h3);
-    li.appendChild(img);
-    li.appendChild(paragraph);
-    li.appendChild(button);
+        if (initialCart) {
+            cart = JSON.parse(initialCart);
+        } else {
+            cart = [];
+        }
+
+        let productsAlreadyInCart = findById(cart, pokemon.id);
+        
+        if (!productsAlreadyInCart) {
+            const initialItem = {
+                id: pokemon.id,
+                quantity: 1
+            };
+            cart.push(initialItem);
+        } else {
+            productsAlreadyInCart.quantity++;
+        }
+
+        const newCart = JSON.stringify(cart);
+        localStorage.setItem('CART', newCart);
+    });
+    li.append(h3, img, paragraph, button);
 
     return li;
 }
