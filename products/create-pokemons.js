@@ -1,5 +1,4 @@
 import { addToCart } from '../common/cart-apis.js';
-import { getCart } from '../getCart.js';
 
 function createPokemons(pokemon) {
 
@@ -65,8 +64,17 @@ function createPokemons(pokemon) {
 
     // add event listener to Add button
     button.addEventListener('click', () => {
-        getCart();
-        addToCart(pokemon, quantitySelect);
+        // get the cart from local storage
+        let initialCart = localStorage.getItem('CART');
+        let cart;
+    // if there is anything already in the cart, parse the data from string format
+        if (initialCart) {
+            cart = JSON.parse(initialCart);
+    // if nothing in cart, create and assign and empty array
+        } else {
+            cart = [];
+        }
+        addToCart(pokemon, quantitySelect, cart);
     });
 
     li.append(h3, img, paragraph, quantityLabel, quantitySelect, button);

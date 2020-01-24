@@ -1,8 +1,7 @@
 import { findById } from './utils.js';
 
-function addToCart(pokemon, quantitySelect) {
+function addToCart(pokemon, quantitySelect, cart) {
     let initialCart = localStorage.getItem('CART');
-    let cart;
     
     // if there is anything already in the cart, parse the data from string format
     if (initialCart) {
