@@ -1,6 +1,8 @@
 import pokemons from '../data/pokemons.js';
 import { renderLineItem } from './render-line-item.js';
 import { findById, calcOrderTotal } from '../common/utils.js';
+import { clearCart } from '../common/cart-apis.js';
+
 
 // get elements from DOM
 const tableBody = document.getElementById('table-body');
@@ -35,7 +37,7 @@ const orderTotalRow = document.createElement('tr');
 
 const orderTotalLabel = document.createElement('td');
 orderTotalLabel.textContent = 'Order Total: ';
-orderTotalLabel.colSpan = '2';
+orderTotalLabel.colSpan = '3';
 orderTotalLabel.id = 'order-total-label';
 orderTotalRow.appendChild(orderTotalLabel);
 
@@ -49,7 +51,11 @@ tableFoot.appendChild(orderTotalRow);
 
 placeOrderButton.addEventListener('click', () => {
     alert(JSON.stringify(orderList, true, 2));
-    localStorage.removeItem('CART');
+    clearCart();
     window.location = '../index.html';
 });
+
+
+
+
 
