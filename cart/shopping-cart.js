@@ -6,12 +6,12 @@ import { clearCart } from '../common/cart-apis.js';
 
 // get elements from DOM
 const tableBody = document.getElementById('table-body');
+const tableFoot = document.getElementById('table-foot');
 const placeOrderButton = document.getElementById('place-order-button');
 
-const tableFoot = document.getElementById('table-foot');
-
-// get cart from local storage, set to empty array if empty
+// get cart from local storage, set to empty array if empty and disable place order button
 const stringyOrderList = localStorage.getItem('CART');
+
 let orderList;
 if (stringyOrderList) {
     orderList = JSON.parse(stringyOrderList);

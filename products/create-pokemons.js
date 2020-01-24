@@ -1,4 +1,5 @@
 import { addToCart } from '../common/cart-apis.js';
+import { getCart } from '../getCart.js';
 
 function createPokemons(pokemon) {
 
@@ -28,6 +29,10 @@ function createPokemons(pokemon) {
 
     const quantitySelect = document.createElement('select');
 
+    const selectOptionZero = document.createElement('option');
+    selectOptionZero.value = 0;
+    selectOptionZero.textContent = 0;
+
     const selectOptionOne = document.createElement('option');
     selectOptionOne.value = 1;
     selectOptionOne.textContent = 1;
@@ -48,7 +53,7 @@ function createPokemons(pokemon) {
     selectOptionFive.value = 5;
     selectOptionFive.textContent = 5;
 
-    quantitySelect.append(selectOptionOne, selectOptionTwo, selectOptionThree, selectOptionFour, selectOptionFive);
+    quantitySelect.append(selectOptionZero, selectOptionOne, selectOptionTwo, selectOptionThree, selectOptionFour, selectOptionFive);
 
     // create button element for product Add
     const button = document.createElement('button');
@@ -60,7 +65,7 @@ function createPokemons(pokemon) {
 
     // add event listener to Add button
     button.addEventListener('click', () => {
-
+        getCart();
         addToCart(pokemon, quantitySelect);
     });
 
