@@ -1,26 +1,35 @@
 import pokemons from '../data/pokemons.js';
-import orderList from '../data/cart.js';
 import { renderLineItem } from './render-line-item.js';
 import { findById, calcOrderTotal } from '../common/utils.js';
 
 // get elements from DOM
 const tableBody = document.getElementById('table-body');
-
-// loop through line items data
-for (let i = 0; i < orderList.length; i++) {
-    // store each line item in a variable
-    const lineItem = orderList[i];
-    // locate the product based on id provided in line item
-    const product = findById(pokemons, lineItem.id);
-
-    // render the line item as a table row
-    const renderedLineItem = renderLineItem(lineItem, product);
-
-    // append the table row to the table body
-    tableBody.appendChild(renderedLineItem);
-}
+const placeOrderButton = document.getElementById('place-order-button');
 
 const tableFoot = document.getElementById('table-foot');
+
+// get cart from local storage, set to empty array if empty
+const stringyOrderList = localStorage.getItem('CART');
+let orderList;
+if (stringyOrderList) {
+    orderList = JSON.parse(stringyOrderList);
+}
+else {
+    orderList = [];
+    placeOrderButton.disabled = 'true';
+}
+
+// create rows for each line item
+orderList.forEach(lineItem => {
+    // locate the product based on id provided in line item
+    const pokemon = findById(pokemons, lineItem.id);
+    
+    // render the line item as a table row
+    const renderedLineItem = renderLineItem(lineItem, pokemon);
+    
+    // append the table row to the table body
+    tableBody.appendChild(renderedLineItem);
+});
 
 const orderTotalRow = document.createElement('tr');
 
@@ -36,4 +45,9 @@ orderTotalAmount.id = 'order-total-amount';
 orderTotalRow.appendChild(orderTotalAmount);
 
 tableFoot.appendChild(orderTotalRow);
+
+
+placeOrderButton.addEventListener('click', () => {
+console.log('HI');
+});
 
