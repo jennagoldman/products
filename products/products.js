@@ -1,13 +1,13 @@
-import { getPokemons } from '../common/utils.js';
-import { createPokemons } from './create-pokemons.js';
+import { getProducts } from '../common/utils.js';
+import { createProducts } from './create-products.js';
 
 const parentList = document.getElementById('pokemon-list');
 
-const pokemons = getPokemons();
+const products = getProducts();
 
-pokemons.forEach(pokemon => {
-    const renderedPokemons = createPokemons(pokemon);
-    parentList.appendChild(renderedPokemons);
+products.forEach(product => {
+    const renderedProducts = createProducts(product);
+    parentList.appendChild(renderedProducts);
 });
 
 

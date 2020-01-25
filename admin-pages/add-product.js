@@ -1,14 +1,14 @@
-import { getPokemons } from '../common/utils.js';
-import { createPokemons } from '../products/create-pokemons.js';
+import { getProducts } from '../common/utils.js';
+import { createProducts } from '../products/create-products.js';
 
 // get needed elements from DOM
 const parentList = document.getElementById('pokemons-list');
-const addPokemonEntryButton = document.getElementById('add-pokemon-entry-button');
+const addProductEntryButton = document.getElementById('add-pokemon-entry-button');
 
 // retrieve existing products array
-const products = getPokemons();
+const products = getProducts();
 
-addPokemonEntryButton.addEventListener('click', (event) => {
+addProductEntryButton.addEventListener('click', (event) => {
     event.preventDefault();
 
     // push new product into array
@@ -17,33 +17,33 @@ addPokemonEntryButton.addEventListener('click', (event) => {
     const numberizedPrice = Number(data.get('price'));
 
 
-    const newPokemon = {
+    const newProduct = {
         id: data.get('id'),
         name: data.get('name'),
         image: data.get('img-src'),
         price: numberizedPrice.toFixed(2)
     };
 
-    products.push(newPokemon);
+    products.push(newProduct);
 
     // re-save the products array
-    const stringyPokemons = JSON.stringify(products);
-    localStorage.setItem('pokemons', stringyPokemons);
+    const stringyProducts = JSON.stringify(products);
+    localStorage.setItem('products', stringyProducts);
 
     // build new product card and add to DOM
-    const newPokemonListItem = createPokemons(newPokemon);
-    parentList.appendChild(newPokemonListItem);
+    const newProductListItem = createProducts(newProduct);
+    parentList.appendChild(newProductListItem);
 
 });
 
 // display existing products in DOM
 // HERE instead of above because putting it above event listener results in the new product card having a quantity and 'add' button
-products.forEach(pokemon => {
-    const pokemonListItem = createPokemons(pokemon);
-    pokemonListItem.querySelector('button').remove();
-    pokemonListItem.querySelector('label').remove();
-    pokemonListItem.querySelector('select').remove();
-    parentList.appendChild(pokemonListItem);
+products.forEach(product => {
+    const productListItem = createProducts(product);
+    productListItem.querySelector('button').remove();
+    productListItem.querySelector('label').remove();
+    productListItem.querySelector('select').remove();
+    parentList.appendChild(productListItem);
 });
 
 

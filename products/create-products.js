@@ -1,24 +1,24 @@
 import { addToCart } from '../common/cart-apis.js';
 
-function createPokemons(pokemon) {
+function createProducts(product) {
 
     // create li element
     const li = document.createElement('li');
     // populate LI class and title attributes
-    li.className = pokemon.category;
-    li.title = pokemon.description;
+    li.className = product.category;
+    li.title = product.description;
 
     // create h3 element and populate with name
     const h3 = document.createElement('h3');
-    h3.textContent = pokemon.name;
+    h3.textContent = product.name;
 
     // create img element and populate with image path
     const img = document.createElement('img');
-    img.src = `../assets/${pokemon.id}.png`;
+    img.src = `../assets/${product.id}.png`;
 
     // create paragraph element and populate with price
     const paragraph = document.createElement('p');
-    const priceWithDecimal = Number(pokemon.price).toFixed(2);
+    const priceWithDecimal = Number(product.price).toFixed(2);
     paragraph.textContent = `$${priceWithDecimal}`;
 
     //create label, select, and option elements for quantity
@@ -56,7 +56,7 @@ function createPokemons(pokemon) {
 
     // create button element for product Add
     const button = document.createElement('button');
-    button.value = pokemon.id;
+    button.value = product.id;
     button.textContent = 'Add';
     button.className = 'add-product-button';
     button.style.display = 'block';
@@ -74,7 +74,7 @@ function createPokemons(pokemon) {
         } else {
             cart = [];
         }
-        addToCart(pokemon, quantitySelect, cart);
+        addToCart(product, quantitySelect, cart);
     });
 
     li.append(h3, img, paragraph, quantityLabel, quantitySelect, button);
@@ -83,5 +83,5 @@ function createPokemons(pokemon) {
 }
 
 export {
-    createPokemons
+    createProducts
 };

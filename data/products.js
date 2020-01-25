@@ -89,7 +89,7 @@ const mewtwo = {
     price: 500
 };
 
-const pokemons = [
+const products = [
     bulbasaur,
     charmander,
     squirtle,
@@ -102,5 +102,5 @@ const pokemons = [
     mewtwo
 ];
 
-export default pokemons;
+export default products;
 

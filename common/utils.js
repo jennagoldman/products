@@ -1,4 +1,4 @@
-import pokemons from '../data/pokemons.js';
+import products from '../data/products.js';
 
 const findById = (someArray, someId) => {
     for (let i = 0; i < someArray.length; i++) {
@@ -31,22 +31,22 @@ const calcOrderTotal = (cartArray, productsArray) => {
     return orderTotalWithDollarSign;
 };
 
-function seedPokemonsIntoLocalStorage() {
-    const pokemonsAlreadyExistInLocalStorage = localStorage.getItem('pokemons');
+function seedProductsIntoLocalStorage() {
+    const productsAlreadyExistInLocalStorage = localStorage.getItem('products');
 
-    if (!pokemonsAlreadyExistInLocalStorage) {
-        const stringyPokemons = JSON.stringify(pokemons);
-        localStorage.setItem('pokemons', stringyPokemons);
+    if (!productsAlreadyExistInLocalStorage) {
+        const stringyProducts = JSON.stringify(products);
+        localStorage.setItem('products', stringyProducts);
     }
 }
 
-function getPokemons() {
-    seedPokemonsIntoLocalStorage();
+function getProducts() {
+    seedProductsIntoLocalStorage();
 
-    const stringyPokemons = localStorage.getItem('pokemons');
-    const parsedPokemons = JSON.parse(stringyPokemons);
+    const stringyProducts = localStorage.getItem('products');
+    const parsedProducts = JSON.parse(stringyProducts);
 
-    return parsedPokemons;
+    return parsedProducts;
 } 
 
 
@@ -54,6 +54,6 @@ export {
     findById,
     calcLineItem,
     calcOrderTotal,
-    getPokemons,
-    seedPokemonsIntoLocalStorage
+    getProducts,
+    seedProductsIntoLocalStorage
 };
