@@ -27,7 +27,7 @@ addPokemonEntryButton.addEventListener('click', (event) => {
     products.push(newPokemon);
 
     // re-save the products array
-    const stringyPokemons = JSON.stringify(pokemons);
+    const stringyPokemons = JSON.stringify(products);
     localStorage.setItem('pokemons', stringyPokemons);
 
     // build new product card and add to DOM

@@ -1,4 +1,4 @@
-const pokemons = getPokemons();
+import pokemons from '../data/pokemons.js';
 
 const findById = (someArray, someId) => {
     for (let i = 0; i < someArray.length; i++) {
