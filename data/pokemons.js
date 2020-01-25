@@ -13,7 +13,7 @@ const charmander = {
     image: 'assets/charmander.png',
     description: 'Fire-type, lizard Pokemon',
     category: 'fire',
-    price: 10,
+    price: 49,
 };
 
 const squirtle = {

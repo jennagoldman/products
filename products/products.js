@@ -3,11 +3,9 @@ import { createPokemons } from './create-pokemons.js';
 
 const parentList = document.getElementById('pokemon-list');
 
-for (let i = 0; i < pokemons.length; i++) {
-    const pokemon = pokemons[i];
-
+pokemons.forEach(pokemon => {
     const renderedPokemons = createPokemons(pokemon);
     parentList.appendChild(renderedPokemons);
-}
+});
 
 

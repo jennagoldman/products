@@ -41,3 +41,8 @@ td {
     padding: 10px 20px;
     cursor: pointer;
 }
+
+#place-order-button:disabled {
+    color: #802438;
+    cursor: initial;
+}
