@@ -1,7 +1,5 @@
 import { calcLineItem } from '../common/utils.js';
 
-
-
 // create function to create first line item as row in table
 function renderLineItem(someLineItem, someProduct) {
     const lineItemRow = document.createElement('tr');
@@ -13,7 +11,7 @@ function renderLineItem(someLineItem, someProduct) {
     lineItemQuantity.textContent = someLineItem.quantity;
 
     const lineItemPrice = document.createElement('td');
-    const lineItemPriceWithCents = someProduct.price.toFixed(2);
+    const lineItemPriceWithCents = Number(someProduct.price).toFixed(2);
     lineItemPrice.textContent = `$${lineItemPriceWithCents}`;
 
     const lineItemTotal = document.createElement('td');

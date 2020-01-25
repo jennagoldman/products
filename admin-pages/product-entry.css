@@ -1,0 +1,27 @@
+main {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+#product-entry-form {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+#product-entry-form p {
+    font-size: 12px;
+}
+
+label {
+    font-weight: 600;
+}
+
+input {
+    display: inline;
+    font-size: 14px;
+}

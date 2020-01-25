@@ -1,3 +1,5 @@
+const pokemons = getPokemons();
+
 const findById = (someArray, someId) => {
     for (let i = 0; i < someArray.length; i++) {
         const item = someArray[i];
@@ -29,11 +31,29 @@ const calcOrderTotal = (cartArray, productsArray) => {
     return orderTotalWithDollarSign;
 };
 
+function seedPokemonsIntoLocalStorage() {
+    const pokemonsAlreadyExistInLocalStorage = localStorage.getItem('pokemons');
 
+    if (!pokemonsAlreadyExistInLocalStorage) {
+        const stringyPokemons = JSON.stringify(pokemons);
+        localStorage.setItem('pokemons', stringyPokemons);
+    }
+}
+
+function getPokemons() {
+    seedPokemonsIntoLocalStorage();
+
+    const stringyPokemons = localStorage.getItem('pokemons');
+    const parsedPokemons = JSON.parse(stringyPokemons);
+
+    return parsedPokemons;
+} 
 
 
 export {
     findById,
     calcLineItem,
-    calcOrderTotal
+    calcOrderTotal,
+    getPokemons,
+    seedPokemonsIntoLocalStorage
 };

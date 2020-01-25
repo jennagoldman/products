@@ -1,8 +1,10 @@
-import pokemons from '../data/pokemons.js';
+
 import { renderLineItem } from './render-line-item.js';
-import { findById, calcOrderTotal } from '../common/utils.js';
+import { findById, calcOrderTotal, getPokemons } from '../common/utils.js';
 import { clearCart } from '../common/cart-apis.js';
 
+// get products from localStorage
+const products = getPokemons();
 
 // get elements from DOM
 const tableBody = document.getElementById('table-body');
@@ -24,7 +26,7 @@ else {
 // create rows for each line item
 orderList.forEach(lineItem => {
     // locate the product based on id provided in line item
-    const pokemon = findById(pokemons, lineItem.id);
+    const pokemon = findById(products, lineItem.id);
     
     // render the line item as a table row
     const renderedLineItem = renderLineItem(lineItem, pokemon);
@@ -42,7 +44,7 @@ orderTotalLabel.id = 'order-total-label';
 orderTotalRow.appendChild(orderTotalLabel);
 
 const orderTotalAmount = document.createElement('td');
-orderTotalAmount.textContent = calcOrderTotal(orderList, pokemons);
+orderTotalAmount.textContent = calcOrderTotal(orderList, products);
 orderTotalAmount.id = 'order-total-amount';
 orderTotalRow.appendChild(orderTotalAmount);
 

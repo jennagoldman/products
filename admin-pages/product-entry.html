@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
+    <link href="/assets/favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="../common/style.css" type="text/css">
+    <link rel="stylesheet" href="../products/products.css" type="text/css">   
+    <link rel="stylesheet" href="./product-entry.css" type="text/css">
+    <title>Catch 'Em All! - Product Entry</title>
+</head>
+
+<body>
+    <header>
+        <h1>Catch 'Em All!</h1>
+        <a href="../index.html">Home</a>
+    </header>
+
+    <main>
+        <div class="container">
+            <form id="product-entry-form">
+                <label>Pokemon ID:</label>
+                <input type="text" name="id"><br>
+
+                <label>Pokemon Name:</label>
+                <input type="text" name="name"><br>
+
+                <label>Image Source*:</label>
+                <input type="text" name="img-src"><br>
+
+                <label>Price:</label>
+                <input type="text" name="price"><br>
+
+                <button id="add-pokemon-entry-button">Add Product</button>
+                <p>* For the sake of consistent image styling, please input the Pokemon's ID as the image source as well.</p>
+            </form>
+
+            <ul id="pokemons-list">
+
+            </ul>
+        </div>
+    </main>
+
+    <footer class="fixed">Made by Jenna Goldman</footer>
+    <script type="module" src="./add-product.js"></script>
+</body>
+
+</html>

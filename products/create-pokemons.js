@@ -18,7 +18,7 @@ function createPokemons(pokemon) {
 
     // create paragraph element and populate with price
     const paragraph = document.createElement('p');
-    const priceWithDecimal = pokemon.price.toFixed(2);
+    const priceWithDecimal = Number(pokemon.price).toFixed(2);
     paragraph.textContent = `$${priceWithDecimal}`;
 
     //create label, select, and option elements for quantity
