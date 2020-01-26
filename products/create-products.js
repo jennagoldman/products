@@ -1,10 +1,9 @@
 import { addToCart } from '../common/cart-apis.js';
+import { removeProduct } from '../admin-pages/remove-product.js';
 
 function createProducts(product) {
-
-    // create li element
+    // create li element and populate class and title attributes
     const li = document.createElement('li');
-    // populate LI class and title attributes
     li.className = product.category;
     li.title = product.description;
 
@@ -55,33 +54,44 @@ function createProducts(product) {
     quantitySelect.append(selectOptionZero, selectOptionOne, selectOptionTwo, selectOptionThree, selectOptionFour, selectOptionFive);
 
     // create button element for product Add
-    const button = document.createElement('button');
-    button.value = product.id;
-    button.textContent = 'Add';
-    button.className = 'add-product-button';
-    button.style.display = 'block';
-    button.style.margin = '10px 50px';
-
-    const removeProductButton = document.createElement('button');
-    removeProductButton.textContent = 'Remove';
-    removeProductButton.id = 'remove-product-button';
+    const addProductToCartButton = document.createElement('button');
+    addProductToCartButton.value = product.id;
+    addProductToCartButton.textContent = 'Add';
+    addProductToCartButton.classList.add('add-product-button');
+    addProductToCartButton.style.display = 'block';
+    addProductToCartButton.style.margin = '10px 50px';
 
     // add event listener to Add button
-    button.addEventListener('click', () => {
+    addProductToCartButton.addEventListener('click', () => {
         // get the cart from local storage
         let initialCart = localStorage.getItem('CART');
         let cart;
-    // if there is anything already in the cart, parse the data from string format
+        // if there is anything already in the cart, parse the data from string format
         if (initialCart) {
             cart = JSON.parse(initialCart);
-    // if nothing in cart, create and assign and empty array
+        // if nothing in cart, create and assign and empty array
         } else {
             cart = [];
         }
         addToCart(product, quantitySelect, cart);
     });
 
-    li.append(h3, img, paragraph, quantityLabel, quantitySelect, button, removeProductButton);
+    // create button element for product Remove on Product Entry page
+    const removeProductButton = document.createElement('button');
+    removeProductButton.textContent = 'Remove';
+    removeProductButton.value = product.id;
+    removeProductButton.id = 'remove-product-button';
+
+    removeProductButton.addEventListener('click', () => {
+        const productId = product.id;
+        
+        li.remove();
+
+        removeProduct(productId);
+
+    });
+
+    li.append(h3, img, paragraph, quantityLabel, quantitySelect, addProductToCartButton, removeProductButton);
 
     return li;
 }
