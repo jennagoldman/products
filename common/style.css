@@ -24,14 +24,14 @@ h1 {
     margin: 10px;
 }
 
-header a {
+a {
     color: #FFF;
     text-decoration: none;
     font-weight: 700;
     margin: 5px 20px;
 }
 
-header a:hover {
+a:hover {
     color: #FFF;
     border-bottom: 2px solid #F64C71;
 }
@@ -51,6 +51,10 @@ main {
 #home-container {
     display: flex;
     justify-content: center;
+}
+
+.uppercase {
+    text-transform: uppercase;
 }
 
 footer {

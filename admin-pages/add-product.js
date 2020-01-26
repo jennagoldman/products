@@ -1,52 +1,15 @@
 import { getProducts } from '../common/utils.js';
-import { createProducts } from '../products/create-products.js';
+import { products } from './product-entry.js';
 
-// get needed elements from DOM
-const parentList = document.getElementById('pokemons-list');
-const addProductEntryButton = document.getElementById('add-pokemon-entry-button');
-
+function addProduct(newProduct) {
 // retrieve existing products array
-const products = getProducts();
-
-products.forEach(product => {
-    const productListItem = createProducts(product);
-    productListItem.querySelector('button').remove();
-    productListItem.querySelector('label').remove();
-    productListItem.querySelector('select').remove();
-    parentList.appendChild(productListItem);
-});
-
-addProductEntryButton.addEventListener('click', (event) => {
-    event.preventDefault();
-
-    // push new product into array
-    const productEntryForm = document.getElementById('product-entry-form');
-    const data = new FormData(productEntryForm);
-    const numberizedPrice = Number(data.get('price'));
-
-
-    const newProduct = {
-        id: data.get('id'),
-        name: data.get('name'),
-        image: data.get('img-src'),
-        price: numberizedPrice.toFixed(2)
-    };
-
+    getProducts();
+// push the new product into the array
     products.push(newProduct);
-
-    // re-save the products array
+// re-save the products array
     const stringyProducts = JSON.stringify(products);
     localStorage.setItem('products', stringyProducts);
+}
 
-    // build new product card and add to DOM
-    const newProductListItem = createProducts(newProduct);
-    newProductListItem.querySelector('label').remove();
-    newProductListItem.querySelector('select').remove();
-    newProductListItem.querySelector('button').remove();
-    parentList.appendChild(newProductListItem);
-
-});
-
-
-
+export { addProduct };
 
