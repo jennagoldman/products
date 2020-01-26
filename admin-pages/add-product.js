@@ -8,6 +8,14 @@ const addProductEntryButton = document.getElementById('add-pokemon-entry-button'
 // retrieve existing products array
 const products = getProducts();
 
+products.forEach(product => {
+    const productListItem = createProducts(product);
+    productListItem.querySelector('button').remove();
+    productListItem.querySelector('label').remove();
+    productListItem.querySelector('select').remove();
+    parentList.appendChild(productListItem);
+});
+
 addProductEntryButton.addEventListener('click', (event) => {
     event.preventDefault();
 
@@ -32,18 +40,13 @@ addProductEntryButton.addEventListener('click', (event) => {
 
     // build new product card and add to DOM
     const newProductListItem = createProducts(newProduct);
+    newProductListItem.querySelector('label').remove();
+    newProductListItem.querySelector('select').remove();
+    newProductListItem.querySelector('button').remove();
     parentList.appendChild(newProductListItem);
 
 });
 
-// display existing products in DOM
-// HERE instead of above because putting it above event listener results in the new product card having a quantity and 'add' button
-products.forEach(product => {
-    const productListItem = createProducts(product);
-    productListItem.querySelector('button').remove();
-    productListItem.querySelector('label').remove();
-    productListItem.querySelector('select').remove();
-    parentList.appendChild(productListItem);
-});
+
 
 

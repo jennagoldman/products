@@ -25,3 +25,24 @@ input {
     display: inline;
     font-size: 14px;
 }
+
+button {
+    color: #FFF;
+    background: #F64C71;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+ul {
+    margin-top: 0;
+}
+
+ul:last-child {
+    margin-bottom: 50px;
+}
