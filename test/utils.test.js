@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
-import pokemons from '../data/pokemons.js';
-import orderList from '../data/cart.js';
+import products from '../data/products.js';
+import orderList from '../data/sample-cart.js';
 import { findById, calcLineItem, calcOrderTotal } from '../common/utils.js';
 // import example from '../src/example.js';
 
@@ -13,7 +13,7 @@ test("findById returns pikachu object's name when provided with pikachu's id", f
 
     //Act 
     // Call the function you're testing and set the result to a const
-    const foundPokemon = findById(pokemons, 'pikachu');
+    const foundPokemon = findById(products, 'pikachu');
     const result = foundPokemon.name;
 
     //Assert
@@ -40,7 +40,7 @@ test('calcOrderTotal returns total of all three line items as $725', function(as
     const expected = '$725.00';
     //Act 
     // Call the function you're testing and set the result to a const
-    const result = calcOrderTotal(orderList, pokemons);
+    const result = calcOrderTotal(orderList, products);
     //Assert
     // Make assertions about what is expected valid result
     assert.equal(result, expected);

@@ -3,11 +3,11 @@ import { createProducts } from '../products/create-products.js';
 import { addProduct } from './add-product.js';
 
 // get needed elements from DOM
-const parentList = document.getElementById('pokemons-list');
-const addProductEntryButton = document.getElementById('add-pokemon-entry-button');
+const parentList = document.getElementById('product-list');
+const addProductButton = document.getElementById('add-product-button');
 
 // retrieve existing products array
-export const products = getProducts();
+const products = getProducts();
 
 products.forEach(product => {
     const productListItem = createProducts(product);
@@ -17,7 +17,7 @@ products.forEach(product => {
     parentList.appendChild(productListItem);
 });
 
-addProductEntryButton.addEventListener('click', (event) => {
+addProductButton.addEventListener('click', (event) => {
     event.preventDefault();
 
     // get form data and store in variables
@@ -44,6 +44,4 @@ addProductEntryButton.addEventListener('click', (event) => {
     parentList.appendChild(newProductListItem);
 
 });
-
-
 

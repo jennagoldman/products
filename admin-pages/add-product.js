@@ -1,9 +1,8 @@
 import { getProducts } from '../common/utils.js';
-import { products } from './product-entry.js';
 
 function addProduct(newProduct) {
 // retrieve existing products array
-    getProducts();
+    const products = getProducts();
 // push the new product into the array
     products.push(newProduct);
 // re-save the products array
