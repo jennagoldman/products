@@ -16,7 +16,7 @@ test('createProducts renders Pikachu data as formatted and styled list item', fu
         price: 50,
     };
 
-    const expected = '<li class="electric" title="Electric-type, mouse Pokemon"><h3>Pikachu</h3><img src="../assets/pikachu.png"><p>$50.00</p><label style="font-size: 14px;">Quantity: </label><select><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><button value="pikachu" class="add-product-button" style="display: block; margin: 10px 50px;">Add</button></li>';
+    const expected = '<li class="electric" title="Electric-type, mouse Pokemon"><h3>Pikachu</h3><img src="../assets/pikachu.png"><p>$50.00</p><label style="font-size: 14px;">Quantity: </label><select><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><button value="pikachu" class="add-product-button" style="display: block; margin: 10px 50px;">Add</button><button value="pikachu" id="remove-product-button">Remove</button></li>';
 
     //Act 
     // Call the function you're testing and set the result to a const

@@ -1,5 +1,6 @@
 import { addToCart } from '../common/cart-apis.js';
 import { removeProduct } from '../admin-pages/remove-product.js';
+import { styleLabel, styleAddButton } from '../common/style-mods.js';
 
 function createProducts(product) {
     // create li element and populate class and title attributes
@@ -22,8 +23,7 @@ function createProducts(product) {
 
     //create label, select, and option elements for quantity
     const quantityLabel = document.createElement('label');
-    quantityLabel.textContent = 'Quantity: ';
-    quantityLabel.style.fontSize = '14px';
+    styleLabel(quantityLabel);
 
     const quantitySelect = document.createElement('select');
 
@@ -57,9 +57,7 @@ function createProducts(product) {
     const addProductToCartButton = document.createElement('button');
     addProductToCartButton.value = product.id;
     addProductToCartButton.textContent = 'Add';
-    addProductToCartButton.classList.add('add-product-button');
-    addProductToCartButton.style.display = 'block';
-    addProductToCartButton.style.margin = '10px 50px';
+    styleAddButton(addProductToCartButton);
 
     // add event listener to Add button
     addProductToCartButton.addEventListener('click', () => {
@@ -84,10 +82,9 @@ function createProducts(product) {
 
     removeProductButton.addEventListener('click', () => {
         const productId = product.id;
-        
-        li.remove();
-
         removeProduct(productId);
+
+        li.remove();
 
     });
 
@@ -99,3 +96,7 @@ function createProducts(product) {
 export {
     createProducts
 };
+
+
+
+
