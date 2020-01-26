@@ -82,9 +82,7 @@ function createProducts(product) {
 
     removeProductButton.addEventListener('click', () => {
         const productId = product.id;
-        removeProduct(productId);
-
-        li.remove();
+        removeProduct(productId, li);
 
     });
 
