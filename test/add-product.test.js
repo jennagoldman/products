@@ -27,5 +27,5 @@ test('addProduct adds newProduct object to the end of the products array in loca
 
     //Assert
     // Make assertions about what is expected valid result
-    assert.deepEqual(result, expected, 'new product is added to the existing array');
+    assert.deepEqual(result, expected);
 });

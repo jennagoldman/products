@@ -6,8 +6,10 @@ import { addProduct } from './add-product.js';
 const parentList = document.getElementById('product-list');
 const addProductButton = document.getElementById('add-product-button');
 
+
 // retrieve existing products array
 const products = getProducts();
+
 
 products.forEach(product => {
     const productListItem = createProducts(product);
@@ -16,6 +18,8 @@ products.forEach(product => {
     productListItem.querySelector('select').remove();
     parentList.appendChild(productListItem);
 });
+
+
 
 addProductButton.addEventListener('click', (event) => {
     event.preventDefault();

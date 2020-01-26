@@ -8,6 +8,9 @@ const products = getProducts();
 products.forEach(product => {
     const renderedProducts = createProducts(product);
     parentList.appendChild(renderedProducts);
+
+    const removeProductButton = document.getElementById('remove-product-button');
+    removeProductButton.remove();
 });
 
 

@@ -62,6 +62,10 @@ function createProducts(product) {
     button.style.display = 'block';
     button.style.margin = '10px 50px';
 
+    const removeProductButton = document.createElement('button');
+    removeProductButton.textContent = 'Remove';
+    removeProductButton.id = 'remove-product-button';
+
     // add event listener to Add button
     button.addEventListener('click', () => {
         // get the cart from local storage
@@ -77,7 +81,7 @@ function createProducts(product) {
         addToCart(product, quantitySelect, cart);
     });
 
-    li.append(h3, img, paragraph, quantityLabel, quantitySelect, button);
+    li.append(h3, img, paragraph, quantityLabel, quantitySelect, button, removeProductButton);
 
     return li;
 }
