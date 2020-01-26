@@ -82,8 +82,8 @@ function createProducts(product) {
 
     removeProductButton.addEventListener('click', () => {
         const productId = product.id;
-        removeProduct(productId, li);
-
+        removeProduct(productId);
+        li.remove();
     });
 
     li.append(h3, img, paragraph, quantityLabel, quantitySelect, addProductToCartButton, removeProductButton);
