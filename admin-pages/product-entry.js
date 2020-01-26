@@ -24,12 +24,14 @@ addProductButton.addEventListener('click', (event) => {
     const productEntryForm = document.getElementById('product-entry-form');
     const data = new FormData(productEntryForm);
     const numberizedPrice = Number(data.get('price'));
-    
+
     // create new object from form data
     const newProduct = {
         id: data.get('id'),
         name: data.get('name'),
         image: data.get('img-src'),
+        category: data.get('category'),
+        description: data.get('description'),
         price: numberizedPrice.toFixed(2)
     };
 
@@ -41,7 +43,10 @@ addProductButton.addEventListener('click', (event) => {
     hideQuantityDropdown(newProductListItem);
     parentList.appendChild(newProductListItem);
 
+    productEntryForm.reset();
+
 });
+
 
 
 
