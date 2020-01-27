@@ -53,6 +53,14 @@ main {
     justify-content: center;
 }
 
+.bold {
+    font-weight: bold;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
 .uppercase {
     text-transform: uppercase;
 }
