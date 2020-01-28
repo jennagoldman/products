@@ -1,0 +1,61 @@
+main {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+#product-entry-form {
+    background: #F64C71;
+    padding: 20px;
+    width: 300px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+h3 {
+    margin: 0;
+}
+
+#product-entry-form p {
+    font-size: 12px;
+    text-align: left;
+}
+
+label {
+    font-weight: 600;
+}
+
+input {
+    display: inline;
+    font-size: 14px;
+    text-align: center;
+}
+
+#add-product-button {
+    background: #FCBA04;
+}
+
+button {
+    color: #FFF;
+    background: #F64C71;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+ul {
+    margin-top: 0;
+}
+
+ul:last-child {
+    margin-bottom: 50px;
+}

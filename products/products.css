@@ -1,3 +1,7 @@
+.container {
+    max-width: 1000px;
+}
+
 #pokemon-list {
     padding: 0;
 }

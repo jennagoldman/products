@@ -1,3 +1,5 @@
+import products from '../data/products.js';
+
 const findById = (someArray, someId) => {
     for (let i = 0; i < someArray.length; i++) {
         const item = someArray[i];
@@ -29,11 +31,29 @@ const calcOrderTotal = (cartArray, productsArray) => {
     return orderTotalWithDollarSign;
 };
 
+function seedProductsIntoLocalStorage() {
+    const productsAlreadyExistInLocalStorage = localStorage.getItem('products');
 
+    if (!productsAlreadyExistInLocalStorage) {
+        const stringyProducts = JSON.stringify(products);
+        localStorage.setItem('products', stringyProducts);
+    }
+}
+
+function getProducts() {
+    seedProductsIntoLocalStorage();
+
+    const stringyProducts = localStorage.getItem('products');
+    const parsedProducts = JSON.parse(stringyProducts);
+
+    return parsedProducts;
+} 
 
 
 export {
     findById,
     calcLineItem,
-    calcOrderTotal
+    calcOrderTotal,
+    getProducts,
+    seedProductsIntoLocalStorage
 };

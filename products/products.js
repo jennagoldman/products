@@ -1,11 +1,16 @@
-import pokemons from '../data/pokemons.js';
-import { createPokemons } from './create-pokemons.js';
+import { getProducts } from '../common/utils.js';
+import { createProducts } from './create-products.js';
 
 const parentList = document.getElementById('pokemon-list');
 
-pokemons.forEach(pokemon => {
-    const renderedPokemons = createPokemons(pokemon);
-    parentList.appendChild(renderedPokemons);
+const products = getProducts();
+
+products.forEach(product => {
+    const renderedProducts = createProducts(product);
+    parentList.appendChild(renderedProducts);
+
+    const removeProductButton = document.getElementById('remove-product-button');
+    removeProductButton.remove();
 });
 
 
