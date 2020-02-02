@@ -2,6 +2,7 @@
 import { renderLineItem } from './render-line-item.js';
 import { findById, calcOrderTotal, getProducts } from '../common/utils.js';
 import { clearCart } from '../common/cart-apis.js';
+import { addSaleToSalesHistory } from './add-sale-to-sales-history.js';
 
 // get products from localStorage
 const products = getProducts();
@@ -55,37 +56,14 @@ placeOrderButton.addEventListener('click', () => {
     alert('Thank you for your order! You will now be redirected to the home page.');
     ///////////////////////////////////////////////////////
     // declare variables for sales history in local storage
-    let salesHistory;
-    let initialSalesHistory = localStorage.getItem('sales-history');
+    addSaleToSalesHistory(orderList);
 
-    // if there is data in local storage, parse it, if not, set to an empty array
-    if (initialSalesHistory) {
-        salesHistory = JSON.parse(localStorage.getItem('sales-history'));
-    } else {
-        salesHistory = [];
-    }
-
-    // go through the orderlist array of objects that have an id and quantity, and add each to local storage
-    orderList.forEach(item => {
-        let productsAlreadySold = findById(salesHistory, item.id);
-
-        if (!productsAlreadySold) {
-            const initialSale = {
-                id: item.id,
-                quantity: item.quantity,
-                total: item.quantity * item.price,
-            }; 
-            salesHistory.push(initialSale);
-        } else {
-            productsAlreadySold.quantity = productsAlreadySold.quantity + item.quantity;
-            productsAlreadySold.total = productsAlreadySold.total + (item.quantity * item.price);
-        }
-    });
-
-    const newSalesHistory = JSON.stringify(salesHistory);
-    localStorage.setItem('sales-history', newSalesHistory);
-
+    // clear cart data in local storage
     clearCart();
 
+    // redirect user to home page
     window.location = '../index.html';
 });
+
+
+
