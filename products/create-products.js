@@ -61,17 +61,7 @@ function createProducts(product) {
 
     // add event listener to Add button
     addProductToCartButton.addEventListener('click', () => {
-        // get the cart from local storage
-        let initialCart = localStorage.getItem('CART');
-        let cart;
-        // if there is anything already in the cart, parse the data from string format
-        if (initialCart) {
-            cart = JSON.parse(initialCart);
-        // if nothing in cart, create and assign and empty array
-        } else {
-            cart = [];
-        }
-        addToCart(product, quantitySelect, cart);
+        addToCart(product, quantitySelect);
     });
 
     // create button element for product Remove on Product Entry page

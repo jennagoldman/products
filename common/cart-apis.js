@@ -1,6 +1,7 @@
 import { findById } from './utils.js';
 
-function addToCart(product, quantitySelect, cart) {
+function addToCart(product, quantitySelect) {
+    let cart;
     let initialCart = localStorage.getItem('CART');
     
     // if there is anything already in the cart, parse the data from string format
@@ -16,11 +17,12 @@ function addToCart(product, quantitySelect, cart) {
     if (!productsAlreadyInCart) {
         const initialItem = {
             id: product.id,
-            quantity: quantitySelect.value
+            quantity: Number(quantitySelect.value),
+            price: product.price,
         };
         cart.push(initialItem);
     } else {
-        productsAlreadyInCart.quantity = parseInt(productsAlreadyInCart.quantity) + parseInt(quantitySelect.value);
+        productsAlreadyInCart.quantity = productsAlreadyInCart.quantity + Number(quantitySelect.value);
     }
 
     const newCart = JSON.stringify(cart);
