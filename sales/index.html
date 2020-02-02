@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
     <link href="/assets/favicon.ico" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href="../common/style.css">
+    <link rel="stylesheet" href="../cart/cart.css">    
     <link rel="stylesheet" href="./sales.css"> 
     <title>Catch 'Em All! - Sales</title>
 </head>
@@ -21,12 +22,23 @@
     </header>
 
     <main>
-        <h2>Sales Report</h2>
         <div class="container">
+            <h2>Sales History Chart</h2>
             <canvas id="sales-report-canvas"></canvas>
 
+            <h2>Sales History Table</h2>
             <table>
-                
+                <thead id="table-head">
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity Sold</th>
+                        <th>Total Sales</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                </tbody>
+                <tfoot id="table-foot">
+                </tfoot>
             </table>
         </div>
     </main>
