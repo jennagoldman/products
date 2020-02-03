@@ -7,8 +7,6 @@ const tableBody = document.getElementById('table-body');
 const tableFoot = document.getElementById('table-foot');
 const salesHistory = getSales();
 
-
-
 renderSalesHistoryChart(salesHistory);
 
 
