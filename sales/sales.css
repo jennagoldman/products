@@ -1,0 +1,13 @@
+.container {
+    width: 800px;
+    height: 600px;
+}
+
+canvas {
+    margin-bottom: 75px;
+}
+
+#alltime-sales-total-label {
+    font-weight: bold;
+    text-align: right;
+}

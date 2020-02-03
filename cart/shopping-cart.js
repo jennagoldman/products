@@ -2,6 +2,7 @@
 import { renderLineItem } from './render-line-item.js';
 import { findById, calcOrderTotal, getProducts } from '../common/utils.js';
 import { clearCart } from '../common/cart-apis.js';
+import { addSaleToSalesHistory } from './add-sale-to-sales-history.js';
 
 // get products from localStorage
 const products = getProducts();
@@ -52,12 +53,17 @@ tableFoot.appendChild(orderTotalRow);
 
 
 placeOrderButton.addEventListener('click', () => {
-    alert(JSON.stringify(orderList, true, 2));
+    alert('Thank you for your order! You will now be redirected to the home page.');
+    ///////////////////////////////////////////////////////
+    // declare variables for sales history in local storage
+    addSaleToSalesHistory(orderList);
+
+    // clear cart data in local storage
     clearCart();
+
+    // redirect user to home page
     window.location = '../index.html';
 });
-
-
 
 
 
